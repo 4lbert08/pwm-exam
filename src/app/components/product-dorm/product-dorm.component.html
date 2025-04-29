@@ -1,0 +1,27 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Enter Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Milk"
+      formControlName="name"
+      required
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="description">Enter Description</label>
+    <input
+      type="text"
+      class="form-control"
+      id="description"
+      placeholder="Cow milk"
+      formControlName="description"
+      required
+    >
+  </div>
+
+  <button type="submit" class="btn btn-primary m-2" [disabled]="form.invalid">Submit</button>
+</form>

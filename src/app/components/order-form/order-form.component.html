@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="client">Select a Client</label>
+    <select
+      class="form-control"
+      id="client"
+      formControlName="clientId"
+      required
+    >
+      <option *ngFor="let client of clients" [value]="client.id">{{client.name}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="product">Select a Product</label>
+    <select
+      class="form-control"
+      id="product"
+      formControlName="productId"
+      required
+    >
+      <option *ngFor="let product of products" [value]="product.id">{{product.name}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="quantity">Enter a Quantity</label>
+    <input
+      type="number"
+      class="form-control"
+      id="quantity"
+      placeholder="3"
+      formControlName="quantity"
+      required
+    >
+  </div>
+
+  <button type="submit" class="btn btn-primary m-2" [disabled]="form.invalid">Submit</button>
+</form>
